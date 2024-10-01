@@ -40,8 +40,6 @@ export class EstatesComponent implements OnInit {
     const { value: formValues } = await Swal.fire({
       title: 'Agregar Propiedad',
       html: `
-
-      
         <input id="title" class="swal2-input" placeholder="Título" >
         <input id="description" class="swal2-input" placeholder="Descripción" ">
         <input id="address" class="swal2-input" placeholder="Dirección"">
@@ -94,6 +92,9 @@ export class EstatesComponent implements OnInit {
         photos: []
       };
       localStorage.setItem(this.currentUser?.username!, JSON.stringify(updateEstate));
+
+      let number = sessionStorage.length + 1    
+      sessionStorage.setItem(number.toString(), JSON.stringify(updateEstate));
 
       this.auth.addEstate(updateEstate);
       Swal.fire('¡Agregado!', 'La propiedad ha sido agregada.', 'success');
@@ -161,6 +162,7 @@ export class EstatesComponent implements OnInit {
         photos: []
       };
       localStorage.setItem(this.currentUser?.username!, JSON.stringify(updateEstate));
+      sessionStorage.setItem("1", JSON.stringify(updateEstate));
 
       this.auth.updateEstate(updateEstate);
       Swal.fire('¡Agregado!', 'La propiedad ha sido agregada.', 'success');

@@ -6,7 +6,9 @@
         <form>
             <div class="location-input">
                 <label>Dónde</label>
-                <input type="text" placeholder="Explora destinos">
+                <select>
+                    <option value="{{item}}" *ngFor="let item of direccion; let indice = index">{{item}}</option>
+                </select>
             </div>
             <div>
                 <label>Llegada</label>
