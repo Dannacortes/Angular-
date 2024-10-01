@@ -3,28 +3,39 @@
 
     <div class="search-bar">
 
-        <form>
-            <div class="location-input">
-                <label>Dónde</label>
-                <select>
-                    <option value="{{item}}" *ngFor="let item of direccion; let indice = index">{{item}}</option>
-                </select>
-            </div>
-            <div>
-                <label>Llegada</label>
-                <input type="text" placeholder="Agrega Fecha">
-            </div>
+        <div class="test">
+                <div class="location-input">
+                    <label>Dónde</label>
+                    <select id="donde" (change)="howMany()">
+                        <option value="{{item}}" *ngFor="let item of direccion; let indice = index">{{item}}</option>
+                    </select>
+                </div>
 
-            <div>
-                <label>Salida</label>
-                <input type="text" placeholder="Agrega fecha">
-            </div>
+                <div class="location-input">
+                    <label>Llegada</label>
+                    <input id="llega" type="date" placeholder="Agrega Fecha" (change)="calcularFecha()">
+                </div>
 
-            <div>
-                <label>Quien</label>
-                <input type="text" placeholder="¿Cuantos?">
+                <div class="location-input">
+                    <label>Salida</label>
+                    <input id="sale" type="date" placeholder="Agrega fecha" (change)="calcularFecha()">
+                </div>
+
+                <div class="location-input">
+                    <label>¿Cuantos?</label>
+                    <input id="quien" type="text" placeholder="¿Cuantos?" disabled >
+                </div>
+            <button type="submit" (click)="mostrarDatos()"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+        <div>
+            <h3 id="titulo"></h3>
+            <h3 id="direccion"></h3>
+            <h3 id="banos"></h3>
+            <h3 id="habittacion"></h3>
+            <h3 id="descripcion"></h3>
+            <h3 id="capacidad"></h3>
+            <h3 id="precio"></h3>
+
+        </div>
     </div>
 </div>

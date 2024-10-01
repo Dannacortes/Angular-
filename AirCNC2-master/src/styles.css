@@ -97,7 +97,7 @@
 }
 
 .location-input {
-    flex: 1;
+    flex: 0.4;
 }
 
 .search-bar form label {
